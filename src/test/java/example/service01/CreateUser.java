@@ -38,7 +38,7 @@ public class CreateUser {
 
         Assert.assertEquals(statusCode, 201);
         Assert.assertEquals("Alex J. Murphy", name);
-        Assert.assertEquals("Police officer", job);
+        Assert.assertEquals("Police officerr", job);
 
     }
 }
