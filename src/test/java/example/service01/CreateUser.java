@@ -21,7 +21,7 @@ public class CreateUser {
     public void postRequestCreateUser() throws JSONException {
 
         JSONObject requestParams = new JSONObject();
-        requestParams.put("name", "Alex J. Murphy");
+        requestParams.put("name", "Robocop");
         requestParams.put("job", "Police officer");
 
         RestAssured.baseURI = "https://reqres.in/";
@@ -37,8 +37,8 @@ public class CreateUser {
 
 
         Assert.assertEquals(statusCode, 201);
-        Assert.assertEquals(name, "Alex J. Murphy");
-        Assert.assertEquals(job, "Police officer");
+        Assert.assertEquals("Alex J. Murphy", name);
+        Assert.assertEquals("Police officer", job);
 
     }
 }
