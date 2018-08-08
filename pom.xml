@@ -33,7 +33,6 @@
                                 <include>**/*ITregression.java</include>
                             </includes>
                         </configuration>
-
                     </execution>
                 </executions>
             </plugin>
