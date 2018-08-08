@@ -14,10 +14,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.*;
 import org.junit.experimental.categories.Category;
 
-import com.codeborne.selenide.junit5.ScreenShooterExtension;
-import com.codeborne.selenide.junit5.TextReportExtension;
+import java.util.logging.Logger;
 
-@ExtendWith({TextReportExtension.class})
 public class CreateUser {
 
     @Test
@@ -43,6 +41,5 @@ public class CreateUser {
         Assert.assertEquals(statusCode, 201);
         Assert.assertEquals("Alex J. Murphy", name);
         Assert.assertEquals("Police officerr", job);
-
     }
 }
