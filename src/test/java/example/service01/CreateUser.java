@@ -27,7 +27,7 @@ public class CreateUser {
 
     @AfterClass
     public static void afterClass() throws IOException {
-        PrintWriter logFile = new PrintWriter("CreateUser.xml", "UTF-8");
+        PrintWriter logFile = new PrintWriter("C:/TestsResult.xml", "UTF-8");
         logFile.write(builder.toString());
         logFile.close();
     }
