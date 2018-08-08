@@ -10,55 +10,18 @@ import io.restassured.specification.RequestSpecification;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.*;
 import org.junit.experimental.categories.Category;
-import org.junit.AfterClass;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
 
+import com.codeborne.selenide.junit5.ScreenShooterExtension;
+import com.codeborne.selenide.junit5.TextReportExtension;
+
+@ExtendWith({TextReportExtension.class})
 public class CreateUser {
-    private static StringBuilder builder = new StringBuilder();
-
-    @AfterClass
-    public static void afterClass() throws IOException {
-        PrintWriter logFile = new PrintWriter("C:/TestsResult.xml", "UTF-8");
-        logFile.write(builder.toString());
-        logFile.close();
-    }
-
-    @Rule
-    public TestWatcher watchman = new TestWatcher() {
-
-        @Override
-        protected void failed(Throwable e, Description description) {
-            if (description != null) {
-                builder.append(description);
-            }
-            if (e != null) {
-                builder.append(' ');
-                builder.append(e);
-            }
-            builder.append(" FAIL\n");
-        }
-
-        @Override
-        protected void succeeded(Description description) {
-            if (description != null) {
-                builder.append(description);
-            }
-            builder.append(" OK\n");
-        }
-    };
 
     @Test
     @Category({RegressionCat.class})
-
     public void postRequestCreateUser() throws JSONException {
 
         JSONObject requestParams = new JSONObject();
