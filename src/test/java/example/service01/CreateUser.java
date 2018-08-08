@@ -23,7 +23,7 @@ public class CreateUser extends MainTestClass {
     public void postRequestCreateUser() throws JSONException {
 
         JSONObject requestParams = new JSONObject();
-        requestParams.put("name", "Robocop");
+        requestParams.put("name", "Alex J. Murphy");
         requestParams.put("job", "Police officer");
 
         RestAssured.baseURI = "https://reqres.in/";

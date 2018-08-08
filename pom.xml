@@ -15,7 +15,7 @@
                 <configuration>
                     <skipTests>false</skipTests>
                     <excludes>
-                        <exclude>**/*IntegrationTest.java</exclude>
+                        <exclude>**/*ITregression.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -30,7 +30,7 @@
                                 <exclude>none</exclude>
                             </excludes>
                             <includes>
-                                <include>**/*IntegrationTest.java</include>
+                                <include>**/*ITregression.java</include>
                             </includes>
                         </configuration>
 
