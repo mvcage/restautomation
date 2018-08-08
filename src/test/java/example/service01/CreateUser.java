@@ -40,6 +40,6 @@ public class CreateUser extends MainTestClass {
 
         Assert.assertEquals(statusCode, 201);
         Assert.assertEquals("Alex J. Murphy", name);
-        Assert.assertEquals("Police officerr", job);
+        Assert.assertEquals("Police officer", job);
     }
 }
