@@ -1,6 +1,7 @@
 package example.service01;
 
 import example.Service01Tests;
+import example.category.MainTestClass;
 import example.category.RegressionCat;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -11,7 +12,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-public class GetUsersOnPage {
+public class GetUsersOnPage extends MainTestClass {
 
     @Test
     @Category({RegressionCat.class})
