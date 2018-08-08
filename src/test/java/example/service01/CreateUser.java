@@ -16,7 +16,7 @@ import org.junit.experimental.categories.Category;
 
 import java.util.logging.Logger;
 
-public class CreateUser {
+public class CreateUser extends MainTestClass {
 
     @Test
     @Category({RegressionCat.class})
