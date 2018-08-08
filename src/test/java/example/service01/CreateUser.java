@@ -22,7 +22,39 @@ import org.junit.AfterClass;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
-public class CreateUser extends MainTestClass {
+public class CreateUser {
+    private static StringBuilder builder = new StringBuilder();
+
+    @AfterClass
+    public static void afterClass() throws IOException {
+        PrintWriter logFile = new PrintWriter("C:\\Program Files (x86)\\Jenkins\\jobs\\AutomationREST\\CreateUser.xml", "UTF-8");
+        logFile.write(builder.toString());
+        logFile.close();
+    }
+
+    @Rule
+    public TestWatcher watchman = new TestWatcher() {
+
+        @Override
+        protected void failed(Throwable e, Description description) {
+            if (description != null) {
+                builder.append(description);
+            }
+            if (e != null) {
+                builder.append(' ');
+                builder.append(e);
+            }
+            builder.append(" FAIL\n");
+        }
+
+        @Override
+        protected void succeeded(Description description) {
+            if (description != null) {
+                builder.append(description);
+            }
+            builder.append(" OK\n");
+        }
+    };
 
     @Test
     @Category({RegressionCat.class})
